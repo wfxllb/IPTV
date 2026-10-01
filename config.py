@@ -17,14 +17,17 @@ max_lines_per_channel = 8
 # ── 订阅源 ───────────────────────────────────────────────────────
 # 每个 URL 都是一个 IPTV 直播源文件（支持 m3u 或 txt 格式）
 # main.py 会依次请求这些地址，提取频道名和播放地址
-# 注：被注释掉的源暂时停用，可取消注释启用
+# 注意：源文件内抓到的频道，只有名称能与 demo.txt 模板匹配上的，才会进入最终输出
 source_urls = [
-    # 范明明与 vbskycn 官方最新直连/分发源及备用加速源
-    "https://live.fanmingming.cn/tv/m3u/ipv6.m3u",
-    "https://live.zbds.top/tv/iptv4.m3u",
-    "https://live.zbds.top/tv/iptv6.m3u",
-    "https://tv.iill.top/m3u/Gather",
-    "https://mirror.ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u"
+    # ── 央视频道 / 卫视频道（大陆多线路候选）──
+    "https://live.zbds.top/tv/iptv4.m3u",                                # vbskycn 每日清洗库（官方直连域名）
+    "https://live.fanmingming.cn/tv/m3u/itv.m3u",                        # 范明明 央卫高清库
+    "https://raw.githubusercontent.com/Guovin/TV/gd/output/result.m3u",  # Guovin 每日聚合输出
+    "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",    # myIPTV 全网通（含港澳台线路）
+    # ── 港·澳·台（TVB / 凤凰 / 电影台等）──
+    "https://raw.githubusercontent.com/sammy0101/hk-iptv-auto/main/hk_live.m3u",  # 香港频道每日自动聚合
+    # ── 自选直连补充源（在本仓库 custom.m3u 中维护，便于随时增删线路）──
+    "https://raw.githubusercontent.com/wfxllb/IPTV/main/custom.m3u",
 ]
 # ── 酒店源 ────────────────────────────────────────────
 # hotel_api   : 酒店源 API 地址
@@ -39,8 +42,8 @@ hotel_config = {
 }
 
 # ── URL 黑名单 ───────────────────────────────────────────────────────
-# 播放地址包含以下任意子串时会被自动过滤掉
-# 用途：屏蔽已知失效、广告插播、低质量或不稳定的源
+# 播放地址包含以下任意子串时会被自动过滤掉（作用于“线路地址”，是地址级过滤，不是频道名过滤）
+# 频道级别的取舍由 demo.txt 模板控制：不在模板里的频道（购物台、地方台、未指定频道等）一律不会输出
 url_blacklist = [
     "epg.pw/stream/",
     "45.192.97.170:8880"

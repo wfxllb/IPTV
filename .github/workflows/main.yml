@@ -4,12 +4,21 @@ on:
   schedule:
     - cron: '0 22 * * *'
   workflow_dispatch:
+  push:
     branches:
       - main
+    paths:
+      - config.py
+      - demo.txt
+      - custom.m3u
+      - .github/workflows/main.yml
 
 jobs:
   run_script:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout repository
