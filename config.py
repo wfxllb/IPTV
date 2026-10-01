@@ -19,9 +19,13 @@ max_lines_per_channel = 8
 # main.py 会依次请求这些地址，提取频道名和播放地址
 # 注：被注释掉的源暂时停用，可取消注释启用
 source_urls = [
-    
+    # 范明明与 vbskycn 官方最新直连/分发源及备用加速源
+    "https://live.fanmingming.cn/tv/m3u/ipv6.m3u",
+    "https://live.zbds.top/tv/iptv4.m3u",
+    "https://live.zbds.top/tv/iptv6.m3u",
+    "https://tv.iill.top/m3u/Gather",
+    "https://mirror.ghproxy.com/https://raw.githubusercontent.com/fanmingming/live/main/tv/m3u/ipv6.m3u"
 ]
-
 # ── 酒店源 ────────────────────────────────────────────
 # hotel_api   : 酒店源 API 地址
 # enabled   : True=启用酒店源抓取，False=跳过
