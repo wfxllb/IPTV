@@ -17,7 +17,7 @@ on:
 
 concurrency:
   group: live-update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   run_script:
@@ -29,6 +29,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -58,7 +60,9 @@ jobs:
         git add -f live.m3u live.txt function.log
         if ! git diff --staged --quiet; then
           git commit -m "Auto-update live files"
-          git pull --rebase -X theirs origin main
+          echo "=== worktree status before sync ==="
+          git status --porcelain
+          git -c rebase.autoStash=true pull --rebase -X theirs origin main
           git push
         fi
 
