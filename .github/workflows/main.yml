@@ -11,7 +11,13 @@ on:
       - config.py
       - demo.txt
       - custom.m3u
+      - check.py
+      - main.py
       - .github/workflows/main.yml
+
+concurrency:
+  group: live-update
+  cancel-in-progress: false
 
 jobs:
   run_script:
@@ -52,6 +58,7 @@ jobs:
         git add -f live.m3u live.txt function.log
         if ! git diff --staged --quiet; then
           git commit -m "Auto-update live files"
+          git pull --rebase -X theirs origin main
           git push
         fi
 
