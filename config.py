@@ -26,6 +26,10 @@ source_urls = [
     "https://raw.githubusercontent.com/suxuang/myIPTV/main/ipv4.m3u",    # myIPTV 全网通（含港澳台线路）
     # ── 港·澳·台（TVB / 凤凰 / 电影台等）──
     "https://raw.githubusercontent.com/sammy0101/hk-iptv-auto/main/hk_live.m3u",  # 香港频道每日自动聚合
+    "https://raw.githubusercontent.com/suxuang/myIPTV/main/%E6%A6%B4%E8%8A%92%E7%94%B5%E8%A7%86.txt",  # 榴芒电视（163189 港澳台/电影台直连系）
+    "https://raw.githubusercontent.com/mhmdxahmd/mafly/main/MAfly1/hktw.m3u",     # mafly 港澳台精选
+    "https://raw.githubusercontent.com/kimwang1978/collect-txt/main/work/%E6%B8%AF%E6%BE%B3%E5%8F%B0.txt",  # collect-txt 港澳台
+    "https://raw.githubusercontent.com/kimwang1978/collect-txt/main/work/%E7%94%B5%E5%BD%B1.txt",          # collect-txt 电影频道
     # ── 自选直连补充源（在本仓库 custom.m3u 中维护，便于随时增删线路）──
     "https://raw.githubusercontent.com/wfxllb/IPTV/main/custom.m3u",
 ]
@@ -101,7 +105,7 @@ check_max_conn   = 80
 # ffprobe_max_streams: ffprobe 最多读取的流数量，避免大文件探流耗时过长
 ffmpeg_path        = ""        # 空 = 使用系统 PATH 里的 ffprobe
 enable_ffprobe     = True
-ffprobe_timeout    = 3.5
+ffprobe_timeout    = 6.5       # 放宽至 6.5s：港澳台多级 HLS 转发链路需要更长的探流时间
 min_bitrate        = 0         # min_bitrate = 200000 → 码率>0 且 <200kbps 的源会被淘汰；码率=0 的源不受影响
 min_resolution     = "720"     # 宽度最低 720px
 ffprobe_max_streams = 3
