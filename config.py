@@ -100,14 +100,15 @@ check_max_conn   = 80
 #                      IPTV 流通常 1~3 秒即可探完，设为 8 秒以容忍慢源
 # min_bitrate        : 最低码率阈值（bps），低于此值且 ffprobe 能读到码率时被过滤
 #                      设为 0 = 不限制码率（IPTV 流常读不到码率字段，此时代偿跳过检查）
-# min_resolution     : 最低分辨率宽度要求（字符串，如 "720" 表示宽 >= 720px）
-#                      设为空字符串 "" = 不限制分辨率
+# min_resolution     : 高清门槛（字符串，如 "720"）
+#                      判定规则：视频高度 >= 720 或 宽度 >= 1280 视为高清并保留，
+#                      否则判为标清直接淘汰；设为空字符串 "" = 不限制分辨率
 # ffprobe_max_streams: ffprobe 最多读取的流数量，避免大文件探流耗时过长
 ffmpeg_path        = ""        # 空 = 使用系统 PATH 里的 ffprobe
 enable_ffprobe     = True
 ffprobe_timeout    = 6.5       # 放宽至 6.5s：港澳台多级 HLS 转发链路需要更长的探流时间
 min_bitrate        = 0         # min_bitrate = 200000 → 码率>0 且 <200kbps 的源会被淘汰；码率=0 的源不受影响
-min_resolution     = "720"     # 宽度最低 720px
+min_resolution     = "720"     # 高清门槛：高≥720 或 宽≥1280，否则淘汰（标清不要）
 ffprobe_max_streams = 3
 
 # ── 深度探测配置 ───────────────────────────────────────────────────────
