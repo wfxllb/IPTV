@@ -67,7 +67,7 @@ def fetch_channels(url):
     channels = OrderedDict()
 
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=15)
         response.raise_for_status()
         response.encoding = "utf-8"
         lines = response.text.split("\n")
@@ -91,19 +91,34 @@ def fetch_channels(url):
                     if current_category and channel_name:
                         channels[current_category].append((channel_name, channel_url))
         else:
-            for line in lines:
-                line = line.strip()
-                if "#genre#" in line:
-                    current_category = line.split(",")[0].strip()
-                    channels[current_category] = []
-                elif current_category:
+            # 部分收集库为无 #genre# 分组的纯列表（每行“频道名,URL”）：整体归入“未分组”
+            has_genre = any("#genre#" in l for l in lines)
+            if not has_genre:
+                channels["未分组"] = []
+                for line in lines:
+                    line = line.strip()
+                    if not line or line.startswith("#"):
+                        continue
                     match = re.match(r"^(.*?),(.*?)$", line)
                     if match:
                         channel_name = match.group(1).strip()
                         channel_url = match.group(2).strip()
-                        channels[current_category].append((channel_name, channel_url))
-                    elif line:
-                        channels[current_category].append((line, ""))
+                        if channel_name and "://" in channel_url:
+                            channels["未分组"].append((channel_name, channel_url))
+            else:
+                for line in lines:
+                    line = line.strip()
+                    if "#genre#" in line:
+                        current_category = line.split(",")[0].strip()
+                        channels[current_category] = []
+                    elif current_category:
+                        match = re.match(r"^(.*?),(.*?)$", line)
+                        if match:
+                            channel_name = match.group(1).strip()
+                            channel_url = match.group(2).strip()
+                            channels[current_category].append((channel_name, channel_url))
+                        elif line:
+                            channels[current_category].append((line, ""))
         if channels:
             categories = ", ".join(channels.keys())
             logging.info(f"url: {url} 抓取成功，包含频道分类: {categories}")
