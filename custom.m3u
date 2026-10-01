@@ -1,11 +1,13 @@
 #EXTM3U
 # ─────────────────────────────────────────────────────────────────
-# 自选直连补充源 v2（2026-10-02 更新）
-# 内容：TVB / 港澳台 / 电影台候选线路，均经本地实测筛选
+# 自选直连补充源 v3（2026-10-02 更新）
+# 内容：TVB / 港澳台 / 电影台候选线路
+# 说明：全部经本机实测筛选；核心线路已做「截图验真」确认频道身份
 # 维护：直接增删行；最终由工作流云端测速清洗后择优收录
 # ─────────────────────────────────────────────────────────────────
 
-# ── TVB 系 ──
+# ═══ TVB 系 ═══
+# 翡翠台（62WM7 已截图验真：TVB 翡翠台台标，1080P）
 #EXTINF:-1 group-title="港·澳·台",翡翠台
 https://cdn.qd.je/163189/fct
 #EXTINF:-1 group-title="港·澳·台",翡翠台
@@ -13,13 +15,17 @@ https://cdn.qd.je/163189.php?id=fct
 #EXTINF:-1 group-title="港·澳·台",翡翠台
 https://cdn6.cc.cd/163189/fct
 #EXTINF:-1 group-title="港·澳·台",翡翠台
-http://103.172.187.30:12000/stream/mytv/null-1/master.m3u8
-#EXTINF:-1 group-title="港·澳·台",翡翠台
-http://r.jdshipin.com/thuYX
-#EXTINF:-1 group-title="港·澳·台",翡翠台
 http://r.jdshipin.com/62WM7
 #EXTINF:-1 group-title="港·澳·台",翡翠台
 http://r.jdshipin.com/n90gt
+#EXTINF:-1 group-title="港·澳·台",翡翠台
+http://r.jdshipin.com/GeWKr
+#EXTINF:-1 group-title="港·澳·台",翡翠台
+http://r.jdshipin.com/qClQf
+#EXTINF:-1 group-title="港·澳·台",翡翠台
+http://r.jdshipin.com/qrfbg
+#EXTINF:-1 group-title="港·澳·台",翡翠台
+http://r.jdshipin.com/thuYX
 #EXTINF:-1 group-title="港·澳·台",明珠台
 https://cdn.qd.je/163189/mzt
 #EXTINF:-1 group-title="港·澳·台",明珠台
@@ -47,7 +53,7 @@ http://r.jdshipin.com/Nr5jq
 #EXTINF:-1 group-title="港·澳·台",TVB Plus
 http://r.jdshipin.com/ndGgS
 
-# ── 香港其他 ──
+# ═══ 香港其他 ═══
 #EXTINF:-1 group-title="港·澳·台",ViuTV
 https://cdn.qd.je/163189/viu
 #EXTINF:-1 group-title="港·澳·台",ViuTV
@@ -73,7 +79,7 @@ https://cdn.qd.je/163189.php?id=rthk32
 #EXTINF:-1 group-title="港·澳·台",港台电视32
 https://rthktv32-live.akamaized.net/hls/live/2036819/RTHKTV32/master.m3u8
 
-# ── 凤凰系 ──
+# ═══ 凤凰系 ═══
 #EXTINF:-1 group-title="港·澳·台",凤凰中文
 https://cdn.qd.je/163189/fhzw
 #EXTINF:-1 group-title="港·澳·台",凤凰中文
@@ -93,7 +99,7 @@ https://cdn.qd.je/163189.php?id=fhhk
 #EXTINF:-1 group-title="港·澳·台",凤凰香港
 http://r.jdshipin.com/yDoTN
 
-# ── 澳门 ──
+# ═══ 澳门 ═══
 #EXTINF:-1 group-title="港·澳·台",澳视澳门
 https://cdn.qd.je/163189/asam
 #EXTINF:-1 group-title="港·澳·台",澳视澳门
@@ -103,7 +109,8 @@ http://r.jdshipin.com/n2YZI
 #EXTINF:-1 group-title="港·澳·台",澳门卫视
 http://php.jdshipin.com:8880/TVOD/iptv.php?id=as
 
-# ── 电影台 ──
+# ═══ 电影台 ═══
+# 美亚电影台（mytv null-2/9/10 已截图验真：美亞電影台台标；ottproxy 1080P）
 #EXTINF:-1 group-title="港·澳·台",美亚电影台
 http://cdn9.163189.xyz/smt1.1.php?id=meiyamovie_twn
 #EXTINF:-1 group-title="港·澳·台",美亚电影台
@@ -114,34 +121,33 @@ http://103.172.187.30:12000/stream/mytv/null-9/master.m3u8
 http://103.172.187.30:12000/stream/mytv/null-10/master.m3u8
 #EXTINF:-1 group-title="港·澳·台",美亚电影台
 http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8
+# 天映频道（typd 已截图验真：CELESTIAL MOVIES 台标，1280x720 高清）
+#EXTINF:-1 group-title="港·澳·台",天映频道
+https://cdn.qd.je/163189/typd
+#EXTINF:-1 group-title="港·澳·台",天映频道
+https://cdn.qd.je/163189.php?id=typd
+#EXTINF:-1 group-title="港·澳·台",天映频道
+https://cdn.qd.je/163189/typd2
+# 天映经典（筛选候选：公开源多为标清，高清门槛过滤后自动取舍）
 #EXTINF:-1 group-title="港·澳·台",天映经典
 https://cdn.qd.je/163189/ccm
 #EXTINF:-1 group-title="港·澳·台",天映经典
 https://cdn.qd.je/163189.php?id=ccm
 #EXTINF:-1 group-title="港·澳·台",天映经典
 https://cdn3.indevs.in/stream/live/ccm/
-#EXTINF:-1 group-title="港·澳·台",天映经典
-http://198.16.64.10:8278/Celestial2/playlist.m3u8?tid=MD3D1210050512100505&ct=19225&tsum=d40ac484b1a904e59158bd911bbd8b89
-#EXTINF:-1 group-title="港·澳·台",天映经典
-http://210.210.155.37/qwr9ew/s/s31/index2.m3u8
+# 东森电影（筛选候选：qd.je 中转链路波动中，由每日清洗自动取舍）
 #EXTINF:-1 group-title="港·澳·台",东森电影
 https://cdn.qd.je/163189/dsdy
 #EXTINF:-1 group-title="港·澳·台",东森电影
 https://cdn.qd.je/163189.php?id=dsdy
 #EXTINF:-1 group-title="港·澳·台",东森电影
-http://50.7.220.74:8278/ettvmovie/playlist.m3u8?tid=MEDE1688528216885282&ct=19193&tsum=843fbd698e260c1fcda128dce85ead3b
-#EXTINF:-1 group-title="港·澳·台",东森电影
-http://50.7.220.74:8278/ettvmovie/playlist.m3u8?tid=md2ba4c243ed411481253&ct=17874&tsum=4637ffbc3260e78931b566300e618313
-#EXTINF:-1 group-title="港·澳·台",东森电影
-http://198.16.64.10:8278/ettvmovie/playlist.m3u8?tid=MBDB9268852192688521&ct=19254&tsum=7514b50ebc2e4b06f2e402578d0ac996
-#EXTINF:-1 group-title="港·澳·台",东森电影
-http://162.19.247.76:22222/live/dsdyt/index.m3u8
+http://119.125.104.183:9901/tsfile/live/1043_1.m3u8?key=txiptv&playlive=1&down=1
+# 东森洋片（筛选候选）
 #EXTINF:-1 group-title="港·澳·台",东森洋片
 https://cdn.qd.je/163189/dsyp
 #EXTINF:-1 group-title="港·澳·台",东森洋片
 https://cdn.qd.je/163189.php?id=dsyp
-#EXTINF:-1 group-title="港·澳·台",东森洋片
-http://162.19.247.76:22222/live/dsypt/index.m3u8
+# 龙华电影（lhdy 已实测 1920x1080 高清）
 #EXTINF:-1 group-title="港·澳·台",龙华电影
 https://cdn.qd.je/163189/lhdy
 #EXTINF:-1 group-title="港·澳·台",龙华电影
@@ -150,5 +156,3 @@ https://cdn.qd.je/163189.php?id=lhdy
 https://cdn6.cc.cd/163189/lhdy
 #EXTINF:-1 group-title="港·澳·台",龙华电影
 https://8.fast.hidns.vip/163189/lhdy
-#EXTINF:-1 group-title="港·澳·台",龙华电影
-http://aktv-stream.m16tv.cfd/stream/taiwan/null-8/AKTV.m3u8
