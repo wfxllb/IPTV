@@ -422,13 +422,17 @@ async def _check_single(session, url, http_timeout, ffprobe_timeout, ffprobe_sem
             probe["layer"] = "ffprobe_fail"
             fast["ffprobe"] = probe
             return fast
+        # 高清门槛（strict）：视频需达到 720p 以上——高≥720 或 宽≥1280；标清（如 1024x576）直接淘汰
         min_res = int(config.min_resolution) if config.min_resolution else 0
-        if min_res > 0 and probe.get("width", 0) < min_res:
-            probe["status"] = "failed"
-            probe["detail"] += f" low_resolution={probe['width']}px < {min_res}px"
-            probe["layer"] = "ffprobe_fail"
-            fast["ffprobe"] = probe
-            return fast
+        if min_res > 0:
+            _w = probe.get("width", 0) or 0
+            _h = probe.get("height", 0) or 0
+            if not (_h >= min_res or _w >= 1280):
+                probe["status"] = "failed"
+                probe["detail"] += f" not_hd={_w}x{_h} < {min_res}p"
+                probe["layer"] = "ffprobe_fail"
+                fast["ffprobe"] = probe
+                return fast
         fast["ffprobe"] = probe
         # 第三层：深度探测（对所有通过中度探测的源）
         if config.enable_deep_probe:
