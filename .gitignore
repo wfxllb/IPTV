@@ -6,3 +6,8 @@ __pycache__/
 
 *.m3u
 *.txt
+
+# 显式允许核心交付文件（否则被上面的通配规则忽略）
+!live.m3u
+!custom.m3u
+!epg_lite.xml

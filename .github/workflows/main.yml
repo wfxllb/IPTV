@@ -1,20 +1,11 @@
 name: Daily Update
 
+# 说明：本工作流的自动清洗已全部停用（仅保留手动触发，供应急备份）。
+# 原因：GitHub 云端（美国服务器）测速的地理视角与用户实际收视网络（东莞移动）
+# 严重不符——云端判定"快速可用"的线路在本地大量超时，反之亦然。
+# 每日清洗改由用户本机（东莞移动网络）执行，结果直接推送 live.m3u。
 on:
-  schedule:
-    # 每天北京时间 17:00（UTC 09:00）——紧贴晚间收视，跑完全网最新一轮清洗
-    - cron: '0 9 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - config.py
-      - demo.txt
-      - custom.m3u
-      - check.py
-      - main.py
-      - .github/workflows/main.yml
 
 concurrency:
   group: live-update
