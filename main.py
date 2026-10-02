@@ -302,6 +302,62 @@ def _print_domain_suggestions(fail_domains: dict):
         logging.info(f"  {domain}  {info}")
 
 
+async def _final_verify_channels(channels, check_results):
+    """终选复验（精筛）：对每频道按质量排序后的前若干候选做「解码复验」（含重试），
+    通过的按排名择优保留（至多 config.max_lines_per_channel 条）；
+    若全部候选未通过，则宽限保留原排名前若干条，避免出现空频道。"""
+    keep = config.max_lines_per_channel if config.max_lines_per_channel > 0 else 2
+    attempts = int(getattr(config, "final_verify_attempts", 2))
+    scan = int(getattr(config, "final_verify_scan", 4))
+
+    jobs = []
+    ranked_map = {}
+    for cat, ch_dict in channels.items():
+        ranked_map[cat] = {}
+        for name, urls in ch_dict.items():
+            ranked = sorted(urls, key=lambda u: _url_sort_key(u, check_results, cat))
+            ranked_map[cat][name] = ranked
+            for u in ranked[:scan]:
+                jobs.append((cat, name, u))
+
+    ok_set = set()
+
+    async def _try(job):
+        cat, name, u = job
+        try:
+            budget = getattr(config, "final_verify_timeout", 15)
+            r = await quality_checker._playback_test_async(u, budget, 3)
+        except Exception as e:
+            r = {"status": "error", "detail": str(e)}
+        return job, r
+
+    if jobs:
+        for _round in range(max(attempts, 1)):
+            pending = [j for j in jobs if (j[0], j[1], j[2]) not in ok_set]
+            if not pending:
+                break
+            gathered = await asyncio.gather(*[_try(j) for j in pending])
+            for job, r in gathered:
+                if isinstance(r, dict) and r.get("status") == "ok":
+                    ok_set.add((job[0], job[1], job[2]))
+
+    verified = OrderedDict()
+    chosen = grace = 0
+    for cat, ch_dict in channels.items():
+        verified[cat] = OrderedDict()
+        for name in ch_dict.keys():
+            ranked = ranked_map[cat][name]
+            picks = [u for u in ranked[:scan] if (cat, name, u) in ok_set][:keep]
+            if picks:
+                chosen += len(picks)
+            else:
+                picks = ranked[:keep]
+                grace += len(picks)
+            verified[cat][name] = picks
+    logging.info(f"[终选复验] 候选 {len(jobs)} 条复验，通过 {len(ok_set)} 条；最终选用 {chosen} 条（宽限保留 {grace} 条）")
+    return verified
+
+
 async def async_main():
     """异步主入口：fetch -> check -> write"""
     epg_id_map = fetch_epg_id_map()
@@ -335,6 +391,13 @@ async def async_main():
         channels = quality_checker.filter_dead_urls(channels, check_results)
         _print_domain_suggestions(fail_domains)
         logging.info("[质量检测] 完成")
+    else:
+        check_results = None
+
+    if getattr(config, "enable_final_verify", True):
+        logging.info("[终选复验] 开始...")
+        channels = await _final_verify_channels(channels, check_results)
+        logging.info("[终选复验] 完成")
 
     updateChannelUrlsM3U(channels, template_channels, epg_id_map, check_results)
 

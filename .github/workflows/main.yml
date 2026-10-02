@@ -2,7 +2,8 @@ name: Daily Update
 
 on:
   schedule:
-    - cron: '0 22 * * *'
+    # 每天北京时间 17:00（UTC 09:00）——紧贴晚间收视，跑完全网最新一轮清洗
+    - cron: '0 9 * * *'
   workflow_dispatch:
   push:
     branches:

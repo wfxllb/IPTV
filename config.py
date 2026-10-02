@@ -11,8 +11,9 @@ ip_version_priority = "ipv6"
 # "hotel" = 酒店源优先排在前面；"subscription" = 订阅源优先
 source_priority = "hotel"
 
-# 每频道最大线路数，0 = 不限制
-max_lines_per_channel = 8
+# 每频道最终保留线路数（精筛后最多保留几条）
+# 建议 1-2 条：第一条为综合最优主用线路，第二条为备用（均须通过终选复验）
+max_lines_per_channel = 2
 
 # ── 订阅源 ───────────────────────────────────────────────────────
 # 每个 URL 都是一个 IPTV 直播源文件（支持 m3u 或 txt 格式）
@@ -122,3 +123,13 @@ ffprobe_max_streams = 3
 enable_deep_probe  = True
 deep_probe_timeout = 5.0
 min_speed_kbps     = 2500  # 2.5 Mbps
+
+# ── 终选复验（精筛，最后一道关） ─────────────────────────────────────
+# 对每频道按质量排序后的前若干候选做「解码复验」——用 ffmpeg 真实解码数秒内容，
+# 模拟播放器起播动作；每条候选默认复验 2 次（反复测试，抗云网络抖动）。
+# 复验通过的才进入最终清单（按排名择优，最多 max_lines_per_channel 条）；
+# 若某频道全部候选复验未通过，则宽限保留原排名前若干条，避免出现空频道。
+enable_final_verify   = True
+final_verify_attempts = 2   # 每条候选复验次数（反复测试）
+final_verify_scan     = 3   # 每频道最多扫描的前 N 名候选
+final_verify_timeout  = 15  # 单次解码复验超时预算（秒；实际执行上限为该值 +5s）

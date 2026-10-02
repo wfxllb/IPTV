@@ -304,9 +304,25 @@ def _deep_probe_m3u8(url, timeout):
     return result
 
 
+def _find_ffmpeg():
+    """查找 ffmpeg 可执行文件（优先与 ffprobe 同目录，回退系统 PATH）"""
+    import os
+    import shutil
+    p = getattr(config, "ffmpeg_path", "") or ""
+    if p:
+        base = os.path.basename(p).lower()
+        if base.startswith("ffmpeg"):
+            return p
+        cand = os.path.join(os.path.dirname(p), "ffmpeg")
+        if os.path.exists(cand):
+            return cand
+        return p
+    return shutil.which("ffmpeg") or "ffmpeg"
+
+
 def _playback_test(url, timeout, test_duration=3):
     """播放测试：尝试解码前 N 秒内容，验证可播放性"""
-    ffprobe = _find_ffprobe()
+    ffmpeg = _find_ffmpeg()
     result = {
         "status": "ok",
         "detail": "",
@@ -315,7 +331,7 @@ def _playback_test(url, timeout, test_duration=3):
     }
     
     cmd = [
-        "ffmpeg",
+        ffmpeg,
         "-y",
         "-v", "error",
         "-i", url,
@@ -351,7 +367,7 @@ def _playback_test(url, timeout, test_duration=3):
             
     except subprocess.TimeoutExpired:
         result["status"] = "timeout"
-        result["detail"] = f"playback_test timeout >{timeout}s"
+        result["detail"] = f"playback_test timeout >{timeout + 5}s"
     except Exception as e:
         result["status"] = "error"
         result["detail"] = str(e)
