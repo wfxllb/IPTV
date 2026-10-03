@@ -1,6 +1,6 @@
 {
  "updated": "2026-10-03",
- "note": "东莞移动本机实测失败名单。blocked=补缺跳过；purge=连同种子一起剔除（稳定失败二次确认）",
+ "note": "东莞移动本机实测失败名单。blocked=补缺跳过；purge=连同种子一起剔除（稳定失败二次确认）。单源模式：MAX_PER_CHANNEL=1",
  "blocked": [
   {
    "url": "https://h5cdn3.kylintv.tv/live/tvbnews_iphone.m3u8",
@@ -201,6 +201,51 @@
    "url": "https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV01.m3u8",
    "channel": "无线新闻台",
    "reason": "dead_family"
+  },
+  {
+   "url": "https://liveopen.siliconweb.com/openTvLive/liveopen/playlist.m3u8",
+   "channel": "HOY TV",
+   "reason": "fake_greek_channel"
+  },
+  {
+   "url": "https://newcntv.qcloudcdn.com/asp/hls/main/0303000a/3/default/75d7257f558e47869e4fb669f3e54ed8/main.m3u8",
+   "channel": "澳门卫视",
+   "reason": "480p_black_screen"
+  },
+  {
+   "url": "https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/master.m3u8",
+   "channel": "港台电视31",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "http://31.43.191.125:8080/restream/restream/34815",
+   "channel": "东森电影",
+   "reason": "error_502_twice"
+  },
+  {
+   "url": "http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34904",
+   "channel": "东森洋片",
+   "reason": "error_502_twice"
+  },
+  {
+   "url": "http://31.43.191.125:8080/restream/restream/34827",
+   "channel": "龙华电影",
+   "reason": "error_502_twice"
+  },
+  {
+   "url": "http://live4play.uk/livehttpplay?channel_id=20077",
+   "channel": "东森电影",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "https://hoytv-live-stream.hoy.tv/ch77/index.m3u8",
+   "channel": "HOY TV",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "http://8.fast.hidns.vip/163189/lhdy",
+   "channel": "龙华电影",
+   "reason": "dead_twice"
   }
  ],
  "purge": [
@@ -283,6 +328,51 @@
    "url": "https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV01.m3u8",
    "channel": "无线新闻台",
    "reason": "dead_family"
+  },
+  {
+   "url": "https://liveopen.siliconweb.com/openTvLive/liveopen/playlist.m3u8",
+   "channel": "HOY TV",
+   "reason": "fake_greek_channel"
+  },
+  {
+   "url": "https://newcntv.qcloudcdn.com/asp/hls/main/0303000a/3/default/75d7257f558e47869e4fb669f3e54ed8/main.m3u8",
+   "channel": "澳门卫视",
+   "reason": "480p_black_screen"
+  },
+  {
+   "url": "https://rthktv31-live.akamaized.net/hls/live/2036818/RTHKTV31/master.m3u8",
+   "channel": "港台电视31",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "http://31.43.191.125:8080/restream/restream/34815",
+   "channel": "东森电影",
+   "reason": "error_502_twice"
+  },
+  {
+   "url": "http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34904",
+   "channel": "东森洋片",
+   "reason": "error_502_twice"
+  },
+  {
+   "url": "http://31.43.191.125:8080/restream/restream/34827",
+   "channel": "龙华电影",
+   "reason": "error_502_twice"
+  },
+  {
+   "url": "http://live4play.uk/livehttpplay?channel_id=20077",
+   "channel": "东森电影",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "https://hoytv-live-stream.hoy.tv/ch77/index.m3u8",
+   "channel": "HOY TV",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "http://8.fast.hidns.vip/163189/lhdy",
+   "channel": "龙华电影",
+   "reason": "dead_twice"
   }
  ]
 }

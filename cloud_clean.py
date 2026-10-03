@@ -76,13 +76,20 @@ CAND_BLACKLIST = [
     "Meroser.mp4", "epg.pw/stream/", "8.138.7.223", "mag.trexlive.me",
     "4666888.xyz", "cdn.qd.je", "jdshipin", "hklive.tv",
     "ye23.win", "3a.ink", "pi.0472.org", "52sf.ga", "live.264788.xyz",
-    "hmysapp.cn",  # "当前频道被外星人偷走了"占位页（2026-10-03 抓帧验出）
+    "hmysapp.cn",                # "当前频道被外星人偷走了"占位页（10-03 抓帧）
+    "liveopen.siliconweb.com",   # 冒充 HOY TV，实为希腊电视台（10-03 抓帧）
+    "newcntv.qcloudcdn.com",     # 澳门卫视：480x270 低清+黑屏（10-03 抓帧）
+    "31.43.191.125",             # 东森洋片/电影/龙华：多次 502/超时（10-03 复测）
+    "live4play.uk",              # 东森电影死链（10-03）
+    "hoytv-live-stream.hoy.tv",  # HOY 死链（10-03）
+    "rthktv31-live.akamaized.net", # 港台31死链（10-03 两次复测）
+    "hidns.vip",                 # 龙华电影 163189 分族死链（10-03）
 ]
 
 EPG_URL = "https://gh-proxy.com/https://raw.githubusercontent.com/wfxllb/IPTV/main/epg_lite.xml"
 LOGO = "https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/{}.png"
 
-MAX_PER_CHANNEL = 2   # 每频道上限（条）
+MAX_PER_CHANNEL = 1   # 每频道上限（条）—— 用户定制：一个频道一个源
 
 
 # ═══════════ 频道名归一化（繁体→简体、剥离画质后缀）═══════════
