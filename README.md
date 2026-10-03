@@ -1,122 +1,86 @@
-﻿# IPTV 直播源
+# IPTV 直播源（东莞移动专版）
 
-自动聚合全网 IPTV 直播源，每日更新，支持 M3U / TXT 格式，可直接用于 TVBox、风萤影视、Kodi 等播放器。
+个人自用 IPTV 订阅源。面向 **东莞移动** 观影网络精选，每频道 1 条最优线路，本机实测 + 抓帧验真，全部为通过检测的真实可用源。
 
-> ⚠️ **声明**：本工具仅提供技术框架，用户须自配合法数据源。所有内容仅供个人测试研究，**不得用于任何商业用途**。
-
----
-
-![img](./image/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-09-21%20185627.png)
-![img](./image/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-09-21%20185432.png)
-![img](./image/Screenshot_2026-08-18-08-36-24-053_com.fongmi.android.tv.jpg)
-![img](./image/Screenshot_2026-08-18-08-36-21-906_com.fongmi.android.tv.jpg)
+> **声明**：本仓库仅供个人学习与技术研究使用，不存储、不传播任何受版权保护的内容，不得用于任何商业用途。
 
 ---
 
-## 功能特性
+## 订阅地址
 
-- **自动聚合**：从多个数据源抓取频道，按频道名精确匹配和模糊匹配汇总
-- **IPv4 / IPv6 双栈**：优先使用 IPv6/IPv4 地址（可配置）
-- **双引擎质量检测**：HTTP 快筛 + FFprobe 中度探测，双重过滤失效和低质量源
-  - 第一层：aiohttp 并发拉取 playlist，验证可达性
-  - 第二层：ffprobe 探流，提取分辨率、码率、编解码器信息
-- **智能排序**：FFprobe 通过的源排前面，同层内按码率、分辨率降序排列
-- **信息标注**：输出 URL 末尾自动附加分辨率和码率，如 `【1920x1080@256kbps】`
-- **黑名单建议**：每次运行后打印频繁失败的域名，方便手动加入黑名单
-- **EPG 电子节目单**：M3U 头部内置多组 EPG 地址，支持 TiviMate、Kodi 等播放器
-- **公告支持**：可在直播源头部插入公告条目，支持自动日期占位符
-- **每日自动更新**：GitHub Actions 定时任务，每天北京时间 06:00 自动推送
+| 通道 | 地址 | 说明 |
+|---|---|---|
+| 主用 | `https://gh-proxy.com/https://raw.githubusercontent.com/wfxllb/IPTV/main/live.m3u` | 加速通道 |
+| 备用 | `https://ghproxy.net/https://raw.githubusercontent.com/wfxllb/IPTV/main/live.m3u` | 备用加速 |
 
----
-## Fork 或 Clone 本仓库运行
+EPG 电子节目单：`epg_lite.xml`（订阅 M3U 头部已内置 `x-tvg-url`，自动加载）。
 
-### 方式一：Fork 项目（使用 GitHub Actions 自动运行）
-- Fork 本仓库​
-- 点击页面右上角的 Fork 按钮，将项目复制到你的 GitHub 账号下。
-
-- 编辑你 fork 后的仓库中的 config.py 文件，找到 source_urls 变量，替换为你自己拥有的合法直播源地址（例如自建源、已获授权的公开源）。
-
-- 启用 GitHub Actions​
-- 进入你 fork 的仓库，点击 Actions 标签页，如果提示需要启用 Workflow，点击 I understand my workflows, go ahead and enable them。之后 Actions 会根据 .github/workflows 中的配置自动运行（通常为每日定时执行）。你也可以手动触发一次，验证能否正常生成 live.m3u。
-获取结果​
-Actions 运行成功后，生成的 live.m3u 和 live.txt 会出现在仓库的根目录（或指定输出目录），可直接通过 Raw 链接导入播放器。
+**播放器**：Apple 端推荐 APTV / 安卓端 TVBox 系。
 
 ---
 
-### 方式二：Clone 项目（本地运行）
-```bash
-# 1. 克隆项目到本地
-git clone https://github.com/yuanzl77/IPTV.git
-cd IPTV
+## 频道一览
 
-# 2. 安装依赖
-pip install -r requirements.txt
+| 分组 | 频道 |
+|---|---|
+| 央视频道 | CCTV1 / 3 / 5 / 6 / 9 / 10 / 12 / 13 / 15（全部 1080p） |
+| 卫视频道 | 湖南卫视 / 浙江卫视 / 东方卫视 / 江苏卫视（全部 1080p） |
+| 港·澳·台 | 翡翠台 / 明珠台（1080p）· 凤凰中文 / 凤凰资讯 / 凤凰香港 · 澳视澳门 · 港台电视32 · 美亚电影台 |
+| 电影轮播 | CHC家庭影院 / CHC动作电影 |
+| 音综轮播 | 音乐欣赏（音乐轮播） |
 
-# 3. 配置数据源（必须操作）
-# 编辑 config.py，找到 source_urls 变量，替换为你自己拥有的合法直播源地址
-# （例如自建源、已获授权的公开源）
+（频道随验真结果动态调整，以 `live.m3u` 实际内容为准）
 
-# 4. 运行脚本
-python main.py
+---
 
-# 生成的 live.m3u 和 live.txt 位于项目根目录，可直接导入播放器使用。
-
-# 5. （可选）设置定时任务
-# 如需每日自动更新，可使用 cron（Linux/macOS）或任务计划程序（Windows）定期执行 python main.py
+## 架构说明（为什么这样设计）
 
 ```
-
-> ⚠️ **重要提示**：您 fork 后的仓库是您个人的独立副本，作者无法控制其内容。请确保您使用的所有直播源均已获得合法授权，任何因使用本脚本导致的版权或合规问题，均由使用者自行承担。
-
----
-
-输出文件：
-- `live.m3u` — M3U 格式（含 EPG，带台标）
-- `live.txt` — TXT 格式（TVBox / 风萤直接使用）
-- `function.log` — 运行日志，含黑名单建议
-
-本地播放建议搭配[iptv-checker](https://github.com/zhimin-dev/iptv-checker)
-实现个人环境高质量播放体验
----
-
-## 配置说明
-
-所有配置在 `config.py` 中修改：
-
-```python
-# IP 优先级：ipv6 或 ipv4
-ip_version_priority = "ipv6"
-
-# 数据源列表（支持 m3u / txt 格式）
-source_urls = [ ... ]
-
-# URL 黑名单（包含任意子串的地址会被过滤）
-url_blacklist = [ ... ]
-
-# 公告条目（写在直播源头部）
-announcements = [ ... ]
-
-# EPG 地址列表
-epg_urls = [ ... ]
-
-# 质量检测
-enable_quality_check = True    # True=启用质量检测（测活后过滤失效源），False=直接输出不过滤
-check_timeout    = 3.5         # 单个 URL HTTP 请求超时时间（秒），超时视为失效
-check_max_conn   = 50          # 最大并发检测数，调高可加速但更占带宽
+┌─ 云端（GitHub Actions，每日 17:00 北京时间）───────────────┐
+│  live.m3u（种子）                                          │
+│    ↓ 种子剪枝（剔除 purge 名单）                            │
+│    ↓ 补缺①：verified_candidates.json（本机实测通过）        │
+│    ↓ 补缺②：多国内库共识 + 轻验证（跳过 blocked）           │
+│    ↓ 写出新 live.m3u → 提交                                │
+└────────────────────────────────────────────────────────────┘
+        ↑ 推送（数据文件）              ↓ 每周六实测（电脑开机时）
+┌─ 本机（东莞移动，每周六自动复检 + 手工验真）───────────────┐
+│  抓共识库候选 → 本机全量实测（真实分片下载）                 │
+│    → verified_candidates.json（通过清单，含测速）           │
+│    → blocked_candidates.json（否决名单）                    │
+│  抓帧验真：ffmpeg 抓帧核验频道身份（防假源/占位页）          │
+└────────────────────────────────────────────────────────────┘
 ```
 
+**核心原则**：
+
+1. **测速视角必须与收视网络一致**——本机（东莞移动）为唯一测速权威，云端不做速度排序；
+2. **种子保护**——`live.m3u` 中的精修线路云端原样保留，只有稳定死链（二次确认）才剔除；
+3. **单源模式**——每频道 1 条最优线路（非多备胎堆砌）；
+4. **抓帧验真**——关键频道以实际画面核验（台标/内容），不做"名字信任"。
 
 ---
 
-## IPv6 优势
+## 文件说明
 
-1. **更低延迟**：减少视频缓冲和加载时间
-2. **更好的组播支持**：更高效地传输视频内容
-3. **更稳定**：避免 IPv4/IPv6 地址转换带来的连接中断
+| 文件 | 说明 |
+|---|---|
+| `live.m3u` | 成品订阅（播放器直接使用） |
+| `epg_lite.xml` | 精简 EPG（目标频道今明两天节目单） |
+| `cloud_clean.py` | 云端清洗脚本（GitHub Actions 调用） |
+| `verified_candidates.json` | 本机实测通过的候选池（供云端补缺） |
+| `blocked_candidates.json` | 本机实测失败名单（blocked=跳过 / purge=剔除） |
+| `.github/workflows/cloud-clean.yml` | 云端每日清洗工作流 |
 
-查看当前网络是否支持 IPv6：[test-ipv6.com](https://test-ipv6.com/index.html.zh_CN)
+---
 
-### Docker 内测中
-```bash
-# 随时删库-仅学习交流
-docker pull yuanzl7712/iptv:latest
+## 维护说明
+
+- 云清洗：每日自动（17:00），无需人工干预；
+- 本机复检：每周六自动（电脑开机时），全量复测现有线路 + 抓取新候选；
+- 手工验真：频道变更时抓帧核验；
+- 黑名单：`blocked_candidates.json` 中的 `purge` 条目会在云端清洗时从种子中剔除。
+
+---
+
+*本仓库为个人自用，不提供任何内容来源担保，请自行评估使用风险。*
