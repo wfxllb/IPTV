@@ -37,13 +37,15 @@ http://183.237.95.108:9901/tsfile/live/1104_1.m3u8?key=txiptv&playlive=0&authid=
 http://43.152.224.209/qctv.fengshows.cn/live/0701phk72.m3u8
 #EXTINF:-1 tvg-id="澳视澳门" tvg-name="澳视澳门" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/澳视澳门.png" group-title="港·澳·台",澳视澳门
 http://183.237.95.108:9901/tsfile/live/1106_1.m3u8?key=txiptv&playlive=0&authid=0
-#EXTINF:-1 tvg-id="港台电视32" tvg-name="港台电视32" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/港台电视32.png" group-title="港·澳·台",港台电视32
-https://cdn.123.rr.kg/163189/rthk32
 #EXTINF:-1 tvg-id="美亚电影台" tvg-name="美亚电影台" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/美亚电影台.png" group-title="港·澳·台",美亚电影台
 http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8
+#EXTINF:-1 tvg-id="无线新闻台" tvg-name="无线新闻台" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/无线新闻台.png" group-title="港·澳·台",无线新闻台
+https://cdn6.cc.cd/163189/wxxw
+#EXTINF:-1 tvg-id="港台电视32" tvg-name="港台电视32" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/港台电视32.png" group-title="港·澳·台",港台电视32
+https://cdn.123.rr.kg/163189/rthk32
 #EXTINF:-1 tvg-id="CHC家庭影院" tvg-name="CHC家庭影院" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CHC家庭影院.png" group-title="电影轮播",CHC家庭影院
 http://107.150.60.122/live/chcjt.m3u8
 #EXTINF:-1 tvg-id="CHC动作电影" tvg-name="CHC动作电影" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CHC动作电影.png" group-title="电影轮播",CHC动作电影
 http://198.204.228.26/live/chcdz.m3u8
-#EXTINF:-1 tvg-id="音乐欣赏" tvg-name="音乐欣赏" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/音乐欣赏.png" group-title="音综轮播",音乐欣赏
-http://61.221.215.25:8800/hls/49/index.m3u8
+#EXTINF:-1 tvg-id="经典电影" tvg-name="经典电影" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/经典电影.png" group-title="电影轮播",经典电影
+https://txmov2.a.kwimgs.com/bs3/video-hls/5211790793651941963_hlsb.m3u8
