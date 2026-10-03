@@ -110,6 +110,15 @@ CAND_BLACKLIST = [
     "ddns-ip.net",               # 龙华电影：本机复测死链（10-03）
     "iptv8k.top",                # 东森电影：本机复测死链（10-03）
     "aktv.top",                  # 龙华电影：本机复测死链（10-03）
+    # 2026-10-03 第三方中转源实测全挂族（精品化改版沉淀）
+    "43.138.0.72",               # YY 轮播全挂
+    "ali.hlspull.yximgs.com",    # 快手 flv 403
+    "live.ottiptv.cc",           # YY 转发
+    "tv.iill.top",               # litv 转发
+    "live.tvfix.org",            # tvfix
+    "hls-gateway.vpstv.net",     # vpstv 聚合
+    "php.jdshipin.com",          # jdshipin php
+    "101.35.240.114",            # 中转 php 站
 ]
 
 # 整站级黑名单（host 下所有 URL 一律跳过——本机验证整站不可用，含路径变体）
@@ -134,6 +143,14 @@ HOST_BLACKLIST = [
     "ddns-ip.net",
     "iptv8k.top",
     "aktv.top",
+    "43.138.0.72",
+    "ali.hlspull.yximgs.com",
+    "live.ottiptv.cc",
+    "tv.iill.top",
+    "live.tvfix.org",
+    "hls-gateway.vpstv.net",
+    "php.jdshipin.com",
+    "goodiptv.club",
 ]
 
 
