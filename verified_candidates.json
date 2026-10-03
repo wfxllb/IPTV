@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-03",
+ "updated": "2026-10-03b",
  "note": "东莞移动本机实测通过（含抓帧验真结论）",
  "channels": {
   "CCTV3": [
@@ -268,12 +268,6 @@
    {
     "url": "http://125.43.244.2:9901/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0",
     "speed_kbps": 586,
-    "verified": "2026-10-02",
-    "src": "fullscan"
-   },
-   {
-    "url": "https://newcntv.qcloudcdn.com/asp/hls/main/0303000a/3/default/18a8a559464448dbaf60d33913e09aea/main.m3u8",
-    "speed_kbps": 280,
     "verified": "2026-10-02",
     "src": "fullscan"
    },
@@ -564,12 +558,6 @@
     "src": "fullscan"
    },
    {
-    "url": "http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34629",
-    "speed_kbps": 197,
-    "verified": "2026-10-03",
-    "src": "consensus"
-   },
-   {
     "url": "http://173.208.234.146/live/fhzw.m3u8",
     "speed_kbps": 67,
     "verified": "2026-10-03",
@@ -636,14 +624,6 @@
     "src": "consensus"
    }
   ],
-  "HOY TV": [
-   {
-    "url": "https://liveopen.siliconweb.com/openTvLive/liveopen/playlist.m3u8",
-    "speed_kbps": 28,
-    "verified": "2026-10-03",
-    "src": "consensus"
-   }
-  ],
   "港台电视32": [
    {
     "url": "https://cdn.123.rr.kg/163189/rthk32",
@@ -674,14 +654,6 @@
    {
     "url": "http://173.208.234.146/live/fhzx.m3u8",
     "speed_kbps": 55,
-    "verified": "2026-10-02",
-    "src": "fullscan"
-   }
-  ],
-  "澳门卫视": [
-   {
-    "url": "https://newcntv.qcloudcdn.com/asp/hls/main/0303000a/3/default/75d7257f558e47869e4fb669f3e54ed8/main.m3u8",
-    "speed_kbps": 845,
     "verified": "2026-10-02",
     "src": "fullscan"
    }

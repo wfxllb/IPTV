@@ -246,6 +246,16 @@
    "url": "http://8.fast.hidns.vip/163189/lhdy",
    "channel": "龙华电影",
    "reason": "dead_twice"
+  },
+  {
+   "url": "https://stream1.freetv.fun/dong-sen-dian-ying-2.m3u8",
+   "channel": "东森电影",
+   "reason": "timeout_local_test"
+  },
+  {
+   "url": "http://bak.dou.ddns-ip.net/api.php?n=xxxtw&id=ZcFnhW&tk=SLK5QjnsRiya",
+   "channel": "龙华电影",
+   "reason": "slow_or_fail_local_test"
   }
  ],
  "purge": [
@@ -373,6 +383,16 @@
    "url": "http://8.fast.hidns.vip/163189/lhdy",
    "channel": "龙华电影",
    "reason": "dead_twice"
+  },
+  {
+   "url": "https://stream1.freetv.fun/dong-sen-dian-ying-2.m3u8",
+   "channel": "东森电影",
+   "reason": "timeout_local_test"
+  },
+  {
+   "url": "http://bak.dou.ddns-ip.net/api.php?n=xxxtw&id=ZcFnhW&tk=SLK5QjnsRiya",
+   "channel": "龙华电影",
+   "reason": "slow_or_fail_local_test"
   }
  ]
 }

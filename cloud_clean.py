@@ -84,7 +84,39 @@ CAND_BLACKLIST = [
     "hoytv-live-stream.hoy.tv",  # HOY 死链（10-03）
     "rthktv31-live.akamaized.net", # 港台31死链（10-03 两次复测）
     "hidns.vip",                 # 龙华电影 163189 分族死链（10-03）
+    "163189.xyz",                # 163189 全家族（含 cdn*.163189.xyz，整族死）
+    "freetv.fun",                # 东森电影：本机复测死链（10-03）
+    "ddns-ip.net",               # 龙华电影：本机复测死链（10-03）
 ]
+
+# 整站级黑名单（host 下所有 URL 一律跳过——本机验证整站不可用，含路径变体）
+HOST_BLACKLIST = [
+    "liveopen.siliconweb.com",     # 冒充 HOY TV（实为希腊台，10-03 抓帧）
+    "newcntv.qcloudcdn.com",       # 澳门卫视 480x270 黑屏（10-03 抓帧）
+    "31.43.191.125",               # 东森洋片/电影 502 站（10-03 复测）
+    "live4play.uk",
+    "hoytv-live-stream.hoy.tv",
+    "rthktv31-live.akamaized.net",
+    "8.fast.hidns.vip",
+    "fast.hidns.vip",
+    "cdn.qd.je",
+    "4666888.xyz",
+    "cdn8.163189.xyz",
+    "cdn9.163189.xyz",
+    "cdn6.163189.xyz",
+    "cdn5.163189.xyz",
+    "cdn3.163189.xyz",
+    "o11.163189.xyz",
+    "freetv.fun",
+    "ddns-ip.net",
+]
+
+
+def _host_blocked(u: str) -> bool:
+    """整站级/域名级黑名单检查（子串匹配，兼容路径变体）"""
+    return any(h in u for h in HOST_BLACKLIST)
+
+
 
 EPG_URL = "https://gh-proxy.com/https://raw.githubusercontent.com/wfxllb/IPTV/main/epg_lite.xml"
 LOGO = "https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/{}.png"
@@ -313,13 +345,17 @@ def main():
         seed_urls = [u for u in seeds.get(ch, []) if u]
         urls = list(seed_urls[:MAX_PER_CHANNEL])
         stats["seed"] += len(urls)
-        # P2：验证池（本机实测通过，含速度）
+        # P2：验证池（本机实测通过，含速度）—— 同样须过滤否决名单与整站黑名单
         if len(urls) < MAX_PER_CHANNEL:
             for item in vpool.get(ch, []):
                 if len(urls) >= MAX_PER_CHANNEL:
                     break
                 u = item["url"] if isinstance(item, dict) else item
-                if u in urls:
+                if u in urls or u in blocked_urls:
+                    continue
+                if _host_blocked(u):
+                    continue
+                if any(b in u for b in CAND_BLACKLIST):
                     continue
                 urls.append(u)
                 stats["vpool"] += 1
@@ -327,7 +363,9 @@ def main():
         if len(urls) < MAX_PER_CHANNEL:
             cands = sorted([(u, cnt) for (c, u), cnt in consensus.items() if c == ch],
                            key=lambda x: -x[1])
-            need_check[ch] = [u for u, _ in cands if u not in urls][:6]
+            need_check[ch] = [u for u, _ in cands
+                              if u not in urls and u not in blocked_urls
+                              and not _host_blocked(u)][:6]
         else:
             need_check[ch] = []
         final[ch] = urls
