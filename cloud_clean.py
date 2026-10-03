@@ -13,6 +13,7 @@
 
 产物：live.m3u（x-tvg-url 头指向 epg_lite.xml；每频道 ≤2 条）
 """
+import json
 import re
 import os
 import sys
@@ -222,9 +223,34 @@ def main():
 
     target_idx = build_target_index()
 
-    # ① 读种子（本机精修成果）
+    # ① 读种子（本机精修成果）——种子永远原样保护，云端不动
     seeds = read_seed("live.m3u")
     print(f"种子加载: {len(seeds)} 频道 / {sum(len(v) for v in seeds.values())} 条线路")
+
+    # ①.5 读本机否决名单（东莞实测失败/假源——补缺环节必须跳过）
+    blocked_urls = set()
+    purge_urls = set()
+    bp_path = "blocked_candidates.json"
+    if os.path.exists(bp_path):
+        try:
+            bp = json.load(open(bp_path, encoding="utf-8"))
+            blocked_urls = {b["url"] for b in bp.get("blocked", [])}
+            purge_urls = {b["url"] for b in bp.get("purge", [])}
+            print(f"否决名单加载: {len(blocked_urls)} 条（含 purge {len(purge_urls)} 条）")
+        except Exception as e:
+            print(f"否决名单读取失败（忽略）: {e}")
+
+    # ①.6 从种子中剔除 purge 条目（稳定死链，二次确认过；瞬时波动不在此列）
+    if purge_urls:
+        pruned = 0
+        for ch in list(seeds.keys()):
+            before = len(seeds[ch])
+            seeds[ch] = [u for u in seeds[ch] if u not in purge_urls]
+            pruned += before - len(seeds[ch])
+            if not seeds[ch]:
+                del seeds[ch]
+        if pruned:
+            print(f"种子剪枝: 剔除 {pruned} 条稳定死链")
 
     # ② 抓共识库
     consensus = {}   # (频道, url) -> 计数（多少个库推了这条）
@@ -241,6 +267,8 @@ def main():
             if not url.startswith("http"):
                 continue
             if any(b in url for b in CAND_BLACKLIST):
+                continue
+            if url in blocked_urls:
                 continue
             ch = target_idx.get(normalize(name))
             if not ch:

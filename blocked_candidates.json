@@ -1,0 +1,268 @@
+{
+ "updated": "2026-10-03",
+ "note": "东莞移动本机实测失败名单。blocked=补缺跳过；purge=连同种子一起剔除（稳定失败二次确认）",
+ "blocked": [
+  {
+   "url": "https://h5cdn3.kylintv.tv/live/tvbnews_iphone.m3u8",
+   "channel": "无线新闻台",
+   "reason": "http_403",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "https://fast.hidns.vip/163189/rthk32",
+   "channel": "港台电视32",
+   "reason": "slow_or_fail",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://rihou.cc:555/tv/东森电影",
+   "channel": "东森电影",
+   "reason": "slow_or_fail",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "https://cdn6.163189.xyz/163189/asam",
+   "channel": "澳视澳门",
+   "reason": "ClientConnectorSSLError",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://cdn.163189.xyz/live/tvbp/stream.m3u8",
+   "channel": "TVB Plus",
+   "reason": "slow_or_fail",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://o11.163189.xyz/stream/live/ccm/",
+   "channel": "天映经典",
+   "reason": "slow_or_fail",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "https://cdn8.163189.xyz/live/lhdy/stream.m3u8",
+   "channel": "龙华电影",
+   "reason": "slow_or_fail",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV62.m3u8",
+   "channel": "无线新闻台",
+   "reason": "slow_or_fail",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://uc6.i-cable.com/live_freedirect/opentvhd001_h.live/playlist.m3u8",
+   "channel": "HOY TV",
+   "reason": "ConnectionTimeoutError",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "https://8.fast.hidns.vip/163189/lhdy",
+   "channel": "龙华电影",
+   "reason": "slow_or_fail",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "https://stream1.freetv.fun/dong-sen-dian-ying-8.ctv",
+   "channel": "东森电影",
+   "reason": "ConnectionTimeoutError",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://43.152.224.209/qctv.fengshows.cn/live/0701phk72.flv",
+   "channel": "凤凰香港",
+   "reason": "TimeoutError",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://live4play.uk/livehttpplay?channel_id=20080",
+   "channel": "东森洋片",
+   "reason": "TimeoutError",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://cdn5.1678520.xyz/live/?id=tvbp",
+   "channel": "TVB Plus",
+   "reason": "TimeoutError",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/gh/Meroser/Media_Coll@main/Meroser.mp4",
+   "channel": "多处",
+   "reason": "occupational_placeholder",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "https://epg.pw/stream/",
+   "channel": "多处",
+   "reason": "no_signal_page",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://8.138.7.223/",
+   "channel": "多处",
+   "reason": "overload_page",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://mag.trexlive.me/",
+   "channel": "天映经典",
+   "reason": "black_screen",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://iptv.4666888.xyz/",
+   "channel": "多处",
+   "reason": "unstable_dead",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "http://kt.hmysapp.cn/",
+   "channel": "美亚电影台",
+   "reason": "placeholder_page",
+   "blocked_at": "2026-10-03"
+  },
+  {
+   "url": "https://h5cdn3.kylintv.tv/live/tvbnews_iphone.m3u8",
+   "channel": "无线新闻台",
+   "reason": "http_403_twice"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV62.m3u8",
+   "channel": "无线新闻台",
+   "reason": "slow_or_fail_twice"
+  },
+  {
+   "url": "http://cdn.163189.xyz/live/tvbp/stream.m3u8",
+   "channel": "TVB Plus",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "http://cdn5.1678520.xyz/live/?id=tvbp",
+   "channel": "TVB Plus",
+   "reason": "http_403_twice"
+  },
+  {
+   "url": "http://o11.163189.xyz/stream/live/ccm/",
+   "channel": "天映经典",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "http://rihou.cc:555/tv/东森电影",
+   "channel": "东森电影",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "https://stream1.freetv.fun/dong-sen-dian-ying-8.ctv",
+   "channel": "东森电影",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "http://live4play.uk/livehttpplay?channel_id=20080",
+   "channel": "东森洋片",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "https://cdn8.163189.xyz/live/lhdy/stream.m3u8",
+   "channel": "龙华电影",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "https://8.fast.hidns.vip/163189/lhdy",
+   "channel": "龙华电影",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "https://fast.hidns.vip/163189/rthk32",
+   "channel": "港台电视32",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "https://cdn6.163189.xyz/163189/asam",
+   "channel": "澳视澳门",
+   "reason": "ssl_fail_twice"
+  },
+  {
+   "url": "http://uc6.i-cable.com/live_freedirect/opentvhd001_h.live/playlist.m3u8",
+   "channel": "HOY TV",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "http://43.152.224.209/qctv.fengshows.cn/live/0701phk72.flv",
+   "channel": "凤凰香港",
+   "reason": "timeout_twice"
+  }
+ ],
+ "purge": [
+  {
+   "url": "https://h5cdn3.kylintv.tv/live/tvbnews_iphone.m3u8",
+   "channel": "无线新闻台",
+   "reason": "http_403_twice"
+  },
+  {
+   "url": "https://raw.githubusercontent.com/ChiSheng9/iptv/master/TV62.m3u8",
+   "channel": "无线新闻台",
+   "reason": "slow_or_fail_twice"
+  },
+  {
+   "url": "http://cdn.163189.xyz/live/tvbp/stream.m3u8",
+   "channel": "TVB Plus",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "http://cdn5.1678520.xyz/live/?id=tvbp",
+   "channel": "TVB Plus",
+   "reason": "http_403_twice"
+  },
+  {
+   "url": "http://o11.163189.xyz/stream/live/ccm/",
+   "channel": "天映经典",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "http://rihou.cc:555/tv/东森电影",
+   "channel": "东森电影",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "https://stream1.freetv.fun/dong-sen-dian-ying-8.ctv",
+   "channel": "东森电影",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "http://live4play.uk/livehttpplay?channel_id=20080",
+   "channel": "东森洋片",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "https://cdn8.163189.xyz/live/lhdy/stream.m3u8",
+   "channel": "龙华电影",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "https://8.fast.hidns.vip/163189/lhdy",
+   "channel": "龙华电影",
+   "reason": "dead_twice"
+  },
+  {
+   "url": "https://fast.hidns.vip/163189/rthk32",
+   "channel": "港台电视32",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "https://cdn6.163189.xyz/163189/asam",
+   "channel": "澳视澳门",
+   "reason": "ssl_fail_twice"
+  },
+  {
+   "url": "http://uc6.i-cable.com/live_freedirect/opentvhd001_h.live/playlist.m3u8",
+   "channel": "HOY TV",
+   "reason": "timeout_twice"
+  },
+  {
+   "url": "http://43.152.224.209/qctv.fengshows.cn/live/0701phk72.flv",
+   "channel": "凤凰香港",
+   "reason": "timeout_twice"
+  }
+ ]
+}
