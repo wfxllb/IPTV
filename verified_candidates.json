@@ -1,0 +1,690 @@
+{
+ "updated": "2026-10-03",
+ "note": "东莞移动本机实测通过（含抓帧验真结论）",
+ "channels": {
+  "CCTV3": [
+   {
+    "url": "http://125.43.244.2:9901/tsfile/live/1009_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 583,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 219,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://222.134.245.16:9901/tsfile/live/0003_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 149,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://107.150.60.122/live/cctv3hd.m3u8",
+    "speed_kbps": 50,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://74.91.26.218:82/live/cctv3hd.m3u8",
+    "speed_kbps": 43,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv3hd",
+    "speed_kbps": 42,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://192.151.150.154/live/cctv3hd.m3u8",
+    "speed_kbps": 39,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   }
+  ],
+  "CCTV1": [
+   {
+    "url": "http://play.kankanlive.com/live/1698234869325962.m3u8",
+    "speed_kbps": 1384,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://125.43.244.2:9901/tsfile/live/1005_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 415,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://119.51.64.185:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=0&authid=0",
+    "speed_kbps": 314,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://222.134.245.16:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 109,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 73,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv1hd",
+    "speed_kbps": 57,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://204.12.221.218:8181/3m1080p/cctv1.m3u8",
+    "speed_kbps": 50,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://192.151.150.154/live/cctv1hd.m3u8",
+    "speed_kbps": 44,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://38.75.136.137:98/gslb/dsdqbv/cctv1hd.m3u8?auth=test20251009",
+    "speed_kbps": 34,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://198.204.228.26/live/cctv1hd.m3u8",
+    "speed_kbps": 29,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://74.91.26.218:82/live/cctv1hd.m3u8",
+    "speed_kbps": 21,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "CCTV5": [
+   {
+    "url": "http://222.134.245.16:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 177,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 163,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://1.197.249.21:9901/tsfile/live/0005_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 148,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://gmxw.7766.org:808/hls/93/index.m3u8",
+    "speed_kbps": 60,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://38.75.136.137:98/gslb/dsdqpub/cctv5p.m3u8?auth=testpub",
+    "speed_kbps": 44,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://207.56.13.146:81/cdnlive/cctv5.m3u8",
+    "speed_kbps": 39,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://107.150.60.122/live/cctv5hd.m3u8",
+    "speed_kbps": 35,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://173.208.212.130:8181/720p/cctv5.m3u8",
+    "speed_kbps": 35,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "CCTV6": [
+   {
+    "url": "http://125.43.244.2:9901/tsfile/live/1011_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 527,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/0006_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 242,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://198.204.228.26/live/cctv6hd.m3u8",
+    "speed_kbps": 43,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://74.91.26.218:82/live/cctv6hd.m3u8",
+    "speed_kbps": 34,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=cctv6hd",
+    "speed_kbps": 33,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://192.151.150.154/live/cctv6hd.m3u8",
+    "speed_kbps": 29,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   }
+  ],
+  "CCTV9": [
+   {
+    "url": "http://125.43.244.2:9901/tsfile/live/1012_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 498,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "https://play.kankanlive.com/live/1698423397390920.m3u8",
+    "speed_kbps": 272,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/0009_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 119,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://192.151.150.154/live/cctv9hd.m3u8",
+    "speed_kbps": 51,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://198.204.228.26/live/cctv9hd.m3u8",
+    "speed_kbps": 43,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://74.91.26.218:82/live/cctv9hd.m3u8",
+    "speed_kbps": 39,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://107.150.60.122/live/cctv9hd.m3u8",
+    "speed_kbps": 36,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "湖南卫视": [
+   {
+    "url": "https://txmov2.a.kwimgs.com/bs3/video-hls/5199687338554291078_hlsb.m3u8",
+    "speed_kbps": 914,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/Y2RuZXhfaWQ9YWxfaGxzX2xkdnQmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8",
+    "speed_kbps": 783,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://hlsal-ldvt.qing.mgtv.com/nn_live/nn_x64/dWlwPTEyNy4wLjAuMSZ1aWQ9cWluZy1jbXMmbm5fdGltZXpvbmU9OCZjZG5leF9pZD1hbF9obHNfbGR2dCZ1dWlkPTliODY4NmU5ZTM2YzYwMmMmZT02OTE0NjA0JnY9MSZpZD1ITldTWkdTVCZzPTcwN2RiYTc2YzJjNmJmMTQ4MmUyZGYzOWU2NWM3YWFi/HNWSZGST.m3u8",
+    "speed_kbps": 767,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://125.43.244.2:9901/tsfile/live/1021_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 586,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "https://newcntv.qcloudcdn.com/asp/hls/main/0303000a/3/default/18a8a559464448dbaf60d33913e09aea/main.m3u8",
+    "speed_kbps": 280,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 132,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://1.197.249.21:9901/tsfile/live/0128_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 99,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://74.91.26.218:82/live/hnwshd.m3u8",
+    "speed_kbps": 52,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://198.204.228.26/live/hnwshd.m3u8",
+    "speed_kbps": 37,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=hnwshd",
+    "speed_kbps": 20,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "东方卫视": [
+   {
+    "url": "https://txmov2.a.kwimgs.com/bs3/video-hls/5219953535631090825_hlsb.m3u8",
+    "speed_kbps": 1507,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 192,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://222.134.245.16:9901/tsfile/live/0107_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 178,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://bp-resource-dfl.bestv.cn/148/3/video.m3u8",
+    "speed_kbps": 101,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://192.151.150.154/live/dfwshd.m3u8",
+    "speed_kbps": 59,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://bp-resource-dfl.bestv.cn/155/3/video.m3u8",
+    "speed_kbps": 54,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://107.150.60.122/live/dfwshd.m3u8",
+    "speed_kbps": 36,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=dfwshd",
+    "speed_kbps": 32,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://198.204.228.26/live/dfwshd.m3u8",
+    "speed_kbps": 31,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://38.75.136.137:98/gslb/dsdqbv/dfwshd.m3u8?auth=test20251009",
+    "speed_kbps": 27,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "江苏卫视": [
+   {
+    "url": "http://125.43.244.2:9901/tsfile/live/1030_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 436,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://222.134.245.16:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 152,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/0127_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 147,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://192.151.150.154/live/jswshd.m3u8",
+    "speed_kbps": 57,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://198.204.228.26/live/jswshd.m3u8",
+    "speed_kbps": 51,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=jswshd",
+    "speed_kbps": 50,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://38.75.136.137:98/gslb/dsdqbv/jswshd.m3u8?auth=test20251009",
+    "speed_kbps": 48,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://107.150.60.122/live/jswshd.m3u8",
+    "speed_kbps": 27,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://38.75.136.137:98/gslb/dsdqpub/jswshd.m3u8?auth=testpub",
+    "speed_kbps": 12,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "浙江卫视": [
+   {
+    "url": "http://ali-m-l.cztv.com/channels/lantian/channel01/1080p.m3u8",
+    "speed_kbps": 1010,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8",
+    "speed_kbps": 731,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://125.43.244.2:9901/tsfile/live/1031_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 474,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8",
+    "speed_kbps": 447,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "https://ali-m-l.cztv.com/channels/lantian/channel001/1080p.m3u8?",
+    "speed_kbps": 395,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 186,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://222.134.245.16:9901/tsfile/live/0124_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 185,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://63.141.230.178:82/gslb/zbdq5.m3u8?id=zjwshd",
+    "speed_kbps": 57,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://198.204.228.26/live/zjwshd.m3u8",
+    "speed_kbps": 52,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://38.75.136.137:98/gslb/dsdqpub/zjwshd.m3u8?auth=testpub",
+    "speed_kbps": 47,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://107.150.60.122/live/zjwshd.m3u8",
+    "speed_kbps": 42,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://192.151.150.154/live/zjwshd.m3u8",
+    "speed_kbps": 33,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   }
+  ],
+  "明珠台": [
+   {
+    "url": "http://116.77.33.98:44330/tsfile/live/1009_1.m3u8?key=txiptv&playlive=0&authid=0",
+    "speed_kbps": 82,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/1015_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 69,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "https://live2.tensila.com/pearl-v-1.pearlfm/hls/live/mystream.m3u8",
+    "speed_kbps": 56,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "凤凰中文": [
+   {
+    "url": "http://120.198.95.220:9901/tsfile/live/1036_1.m3u8?key=txiptv&playlive=1&down=1",
+    "speed_kbps": 802,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://120.198.95.220:9901/tsfile/live/1036_1.m3u8?key=txiptv",
+    "speed_kbps": 424,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://183.237.95.108:9901/tsfile/live/1103_1.m3u8?key=txiptv&playlive=0&authid=0",
+    "speed_kbps": 412,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/1003_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 384,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://219.145.93.74:10000/tsfile/live/1002_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 227,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://218.206.193.218:8888/hls/66/index.m3u8",
+    "speed_kbps": 227,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://zmgd.zyrnet.com:8888/hls/110/index.m3u8",
+    "speed_kbps": 220,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://31.43.191.125:8080/vip6821768502490/6c17bae55394/34629",
+    "speed_kbps": 197,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://173.208.234.146/live/fhzw.m3u8",
+    "speed_kbps": 67,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://43.152.224.209/qctv.fengshows.cn/live/0701pcc72.m3u8",
+    "speed_kbps": 51,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   }
+  ],
+  "凤凰香港": [
+   {
+    "url": "http://43.152.224.209/qctv.fengshows.cn/live/0701phk72.m3u8",
+    "speed_kbps": 52,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://173.208.234.146/live/fhxg.m3u8",
+    "speed_kbps": 46,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "美亚电影台": [
+   {
+    "url": "http://ottproxy2.ist.ooo/livehls/MOB-U1-NO/03.m3u8",
+    "speed_kbps": 173,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://103.172.187.30:12000/stream/mytv/null-2/master.m3u8",
+    "speed_kbps": 33,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   }
+  ],
+  "翡翠台": [
+   {
+    "url": "http://120.198.95.220:9901/tsfile/live/1004_1.m3u8?key=txiptv",
+    "speed_kbps": 477,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   },
+   {
+    "url": "http://183.10.180.81:9901/tsfile/live/1006_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 108,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://183.62.8.58:50085/tsfile/live/0017_1.m3u8?key=txiptv&playlive=1&authid=0",
+    "speed_kbps": 82,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://116.77.33.98:44330/tsfile/live/1008_1.m3u8?key=txiptv&playlive=0&authid=0",
+    "speed_kbps": 73,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "HOY TV": [
+   {
+    "url": "https://liveopen.siliconweb.com/openTvLive/liveopen/playlist.m3u8",
+    "speed_kbps": 28,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "港台电视32": [
+   {
+    "url": "https://cdn.123.rr.kg/163189/rthk32",
+    "speed_kbps": 16,
+    "verified": "2026-10-03",
+    "src": "consensus"
+   }
+  ],
+  "凤凰资讯": [
+   {
+    "url": "http://120.198.95.220:9901/tsfile/live/1037_1.m3u8?key=txiptv",
+    "speed_kbps": 1167,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://zmgd.zyrnet.com:8888/hls/109/index.m3u8",
+    "speed_kbps": 240,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://43.152.224.209/qctv.fengshows.cn/live/0701pin72.m3u8",
+    "speed_kbps": 105,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   },
+   {
+    "url": "http://173.208.234.146/live/fhzx.m3u8",
+    "speed_kbps": 55,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   }
+  ],
+  "澳门卫视": [
+   {
+    "url": "https://newcntv.qcloudcdn.com/asp/hls/main/0303000a/3/default/75d7257f558e47869e4fb669f3e54ed8/main.m3u8",
+    "speed_kbps": 845,
+    "verified": "2026-10-02",
+    "src": "fullscan"
+   }
+  ]
+ }
+}

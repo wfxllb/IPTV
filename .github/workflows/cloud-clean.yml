@@ -1,0 +1,54 @@
+name: Cloud Consensus Clean
+
+# 云端每日共识清洗（北京时间 17:00）
+#
+# 为什么不用云端测速：用户实际收视网络为「东莞移动」，GitHub 云端（美国）
+# 测速视角与之严重不符（曾致整批源在本地不可用）。因此云端不测速，改为：
+#   ① 种子保护——现有 live.m3u（本机东莞实测精修成果）原样保留；
+#   ② 验证池补缺——从 verified_candidates.json（本机实测通过的候选）补；
+#   ③ 共识兜底——从多个国内清洗库抓取候选，按多库共识度 + 轻验证补缺。
+
+on:
+  schedule:
+    - cron: '0 9 * * *'   # UTC 09:00 = 北京时间 17:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-consensus-clean
+  cancel-in-progress: false
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run consensus clean
+        run: python cloud_clean.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -f live.m3u
+          if ! git diff --staged --quiet; then
+            git commit -m "云端共识清洗 $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M')"
+            git -c rebase.autoStash=true pull --rebase origin main
+            git push
+          else
+            echo "内容无变化，跳过提交"
+          fi
