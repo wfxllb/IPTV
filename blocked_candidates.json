@@ -256,6 +256,16 @@
    "url": "http://bak.dou.ddns-ip.net/api.php?n=xxxtw&id=ZcFnhW&tk=SLK5QjnsRiya",
    "channel": "龙华电影",
    "reason": "slow_or_fail_local_test"
+  },
+  {
+   "url": "https://cdn.iptv8k.top/dl/jrys.php?id=231&time=20240926215313&ip=111.229.253.40",
+   "channel": "东森电影",
+   "reason": "slow_or_fail_local_test"
+  },
+  {
+   "url": "http://aktv.top/AKTV/live/aktv/null-23/AKTV.m3u8",
+   "channel": "龙华电影",
+   "reason": "timeout_local_test"
   }
  ],
  "purge": [
@@ -393,6 +403,16 @@
    "url": "http://bak.dou.ddns-ip.net/api.php?n=xxxtw&id=ZcFnhW&tk=SLK5QjnsRiya",
    "channel": "龙华电影",
    "reason": "slow_or_fail_local_test"
+  },
+  {
+   "url": "https://cdn.iptv8k.top/dl/jrys.php?id=231&time=20240926215313&ip=111.229.253.40",
+   "channel": "东森电影",
+   "reason": "slow_or_fail_local_test"
+  },
+  {
+   "url": "http://aktv.top/AKTV/live/aktv/null-23/AKTV.m3u8",
+   "channel": "龙华电影",
+   "reason": "timeout_local_test"
   }
  ]
 }

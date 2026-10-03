@@ -87,6 +87,8 @@ CAND_BLACKLIST = [
     "163189.xyz",                # 163189 全家族（含 cdn*.163189.xyz，整族死）
     "freetv.fun",                # 东森电影：本机复测死链（10-03）
     "ddns-ip.net",               # 龙华电影：本机复测死链（10-03）
+    "iptv8k.top",                # 东森电影：本机复测死链（10-03）
+    "aktv.top",                  # 龙华电影：本机复测死链（10-03）
 ]
 
 # 整站级黑名单（host 下所有 URL 一律跳过——本机验证整站不可用，含路径变体）
@@ -109,6 +111,8 @@ HOST_BLACKLIST = [
     "o11.163189.xyz",
     "freetv.fun",
     "ddns-ip.net",
+    "iptv8k.top",
+    "aktv.top",
 ]
 
 
@@ -205,19 +209,32 @@ def fetch(url: str, retries: int = 2) -> str:
 
 
 def light_check(urls, timeout=12):
-    """并发轻验证：2xx/3xx=ok；4xx/5xx=dead；超时/连接错误=unknown（跨境不代表本地不可达）"""
+    """并发轻验证（强化版）：
+    ok    = 2xx/3xx 且内容为 m3u8/视频流（真流特征）
+    dead  = HTTP 错误 / HTML 假页（"无信号"页、占位页等）
+    unknown = 超时/连接错误（跨域超时——不再作为补入依据，仅记录）
+    """
     from concurrent.futures import ThreadPoolExecutor
 
     def probe(u):
         try:
             r = requests.get(u, timeout=timeout, stream=True, headers={
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
-            for _ in r.iter_content(1024):
-                break
+            chunk = next(r.iter_content(8192), b"")
+            ct = (r.headers.get("Content-Type") or "").lower()
+            status = r.status_code
             r.close()
-            if 200 <= r.status_code < 400:
+            if not (200 <= status < 400):
+                return u, "dead"
+            body = chunk.decode("utf-8", "ignore").lower()
+            # 真流特征：m3u8 / 播放列表 / 视频容器
+            if ("#extm3u" in body or "mpegurl" in ct or "video/" in ct
+                    or "octet-stream" in ct or "mp2t" in ct):
                 return u, "ok"
-            return u, "dead"
+            # HTML 页面 = 假源（无信号/占位/超载页）
+            if "text/html" in ct or "<html" in body or "<!doctype" in body:
+                return u, "dead"
+            return u, "unknown"
         except requests.exceptions.Timeout:
             return u, "unknown"
         except Exception:
@@ -391,13 +408,10 @@ def main():
             if check_result.get(u) == "ok" and u not in cur:
                 cur.append(u)
                 stats["cons_ok"] += 1
-        # 第二轮：未知者兜底（跨境超时不代表本地不可达）
-        for u in cands:
-            if len(cur) >= MAX_PER_CHANNEL:
-                break
-            if check_result.get(u, "unknown") != "dead" and u not in cur:
-                cur.append(u)
-                stats["cons_unknown"] += 1
+        # 注：不再对"未知"状态兜底。
+        # 实测数据：云端"跨境超时(unknown)"的候选在东莞移动本机 90%+ 为死链，
+        # 补入反而污染订阅。宁缺毋滥——缺失频道留空，
+        # 等本机每周任务验证通过后自动补入。
         if not cur:
             stats["empty"].append(ch)
 
